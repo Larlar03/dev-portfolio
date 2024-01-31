@@ -97,7 +97,7 @@ li {
     padding: 60px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 1fr min-content;
     grid-column-gap: 64px;
   }
 
