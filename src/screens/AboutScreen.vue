@@ -9,7 +9,7 @@ import AboutBackground from '../components/AboutBackground.vue'
       <div class="header">
         <Header title="About / Skills" />
       </div>
-      <div class="left">
+      <div class="column left">
         <h4>About</h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -17,7 +17,7 @@ import AboutBackground from '../components/AboutBackground.vue'
           pretium.
         </p>
       </div>
-      <div class="middle">
+      <div class="column middle">
         <h4>Heading</h4>
         <ul>
           <li>One</li>
@@ -27,7 +27,7 @@ import AboutBackground from '../components/AboutBackground.vue'
           <li>Five</li>
         </ul>
       </div>
-      <div class="right">
+      <div class="column right">
         <h4>Heading</h4>
         <ul>
           <li>One</li>
@@ -68,7 +68,7 @@ import AboutBackground from '../components/AboutBackground.vue'
 }
 
 div {
-  margin-bottom: 26px;
+  margin-bottom: 36px;
 }
 
 h4 {
@@ -96,14 +96,19 @@ li {
     height: var(--section-height);
     padding: 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr min-content;
-    grid-column-gap: 64px;
+    grid-column-gap: 100px;
   }
 
   .header {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 4;
     width: 33.3%;
+  }
+
+  .left {
+    grid-column: 1 / span 2;
+
   }
 
   div {
@@ -115,7 +120,7 @@ li {
   }
 
   p {
-    padding-right: 30px;
+    padding-right: 60px;
   }
 }
 </style>
