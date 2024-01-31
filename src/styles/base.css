@@ -26,7 +26,8 @@
 
 /* aura variables */
 :root {
-  --circle-size: 100%;
+  --moving-circle-size: 100%;
+  --static-circle-size: 500px;
   --blending: lighten;
   --bg-color-1: var(--pale-violet);
   --bg-color-2: var(--baby-blue-eyes);
@@ -36,7 +37,12 @@
   --color-2: 153, 204, 204; /* middle-blue-green: */
   --color-3: 224, 195, 252; /* pale-lavender */
   --color-4: 177, 202, 249; /* pale-cornflower-blue */
+  --color-5: 254, 124, 233; /* pale-magenta */
   --cursor-color: 153, 153, 255;
+}
+
+:root {
+  --section-height: 668px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -66,6 +72,10 @@
 @font-face {
   font-family: BodyRegular;
   src: url('../assets/fonts/body-text-fit/Body-Text-Fit-Regular.ttf');
+}
+@font-face {
+  font-family: BodyBold;
+  src: url('../assets/fonts/body-text-fit/Body-Text-Fit-ExtraBold.ttf');
 }
 
 *,
@@ -98,6 +108,7 @@ h3 {
 
 h1 {
   font-size: 65px;
+  line-height: 1.2;
 }
 
 h2 {
@@ -113,4 +124,5 @@ h3 {
 h4 {
   font-family: BodyRegular;
   font-size: 15px;
+  text-transform: uppercase;
 }

@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 
-defineProps<{
-  colors?: number[][]
-}>()
-
 const cursorAura = ref<HTMLDivElement | null>(null)
 const cursorX = ref(0)
 const cursorY = ref(0)
@@ -84,15 +80,15 @@ svg {
 }
 
 .aura-container {
-  filter: url(#filterEffects) blur(10px);
+  filter: url(#filterEffects) blur(25px);
   width: 100%;
   height: 100%;
 }
 
 .aura {
   position: absolute;
-  width: var(--circle-size);
-  height: var(--circle-size);
+  width: var(--moving-circle-size);
+  height: var(--moving-circle-size);
   background-repeat: no-repeat;
   mix-blend-mode: var(--blending);
   opacity: 1;
@@ -104,8 +100,8 @@ svg {
     rgba(var(--color-1), 1) 0,
     rgba(var(--color-1), 0) 50%
   );
-  top: calc(50% - var(--circle-size) / 2);
-  left: calc(50% - var(--circle-size) / 2);
+  top: calc(50% - var(--moving-circle-size) / 2);
+  left: calc(50% - var(--moving-circle-size) / 2);
   transform-origin: calc(50% + 220px) calc(50% + 100px);
   animation: moveInCircle 10s reverse infinite;
 }
@@ -116,8 +112,8 @@ svg {
     rgba(var(--color-2), 1) 0,
     rgba(var(--color-2), 0) 50%
   );
-  top: calc(50% - var(--circle-size) / 2);
-  left: calc(50% - var(--circle-size) / 2);
+  top: calc(50% - var(--moving-circle-size) / 2);
+  left: calc(50% - var(--moving-circle-size) / 2);
   transform-origin: calc(50% - 300px);
   animation: moveInCircle 10s linear infinite;
 }
@@ -127,8 +123,8 @@ svg {
     rgba(var(--color-3), 1) 0,
     rgba(var(--color-3), 0) 50%
   );
-  top: calc(50% - var(--circle-size) / 2 - 200px);
-  left: calc(50% - var(--circle-size) / 2 + 300px);
+  top: calc(50% - var(--moving-circle-size) / 2 - 200px);
+  left: calc(50% - var(--moving-circle-size) / 2 + 300px);
   transform-origin: calc(50% - 200px);
   animation: moveInCircle 10s linear infinite;
 }
@@ -138,8 +134,8 @@ svg {
     rgba(var(--color-4), 1) 0,
     rgba(var(--color-4), 0) 50%
   );
-  top: calc(50% - var(--circle-size) / 2 - 200px);
-  left: calc(50% - var(--circle-size) / 2 - 400px);
+  top: calc(50% - var(--moving-circle-size) / 2 - 200px);
+  left: calc(50% - var(--moving-circle-size) / 2 - 400px);
   transform-origin: calc(50% + 220px) calc(50% + 100px);
   animation: moveInCircle 20s reverse infinite;
 }

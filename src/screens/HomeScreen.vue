@@ -32,7 +32,16 @@ div {
   justify-content: center;
   align-items: center;
   line-height: 1.3;
+  text-align: center;
   color: var(--color-title);
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 20px;
 }
 
 span {
@@ -43,6 +52,9 @@ span {
   z-index: 1;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  h1 {
+    font-size: 65px;
+  }
 }
 </style>
