@@ -1,0 +1,116 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --pale-violet: #cc99ff;
+  --baby-blue-eyes: #99ccff;
+  --maximum-blue-purple: #9999ff;
+  --pale-cornflower-blue: #b1caf9;
+  --pale-lavender: #e0c3fc;
+  --middle-blue-green: #9cc8c8;
+  --brandeis-blue: #0066ff;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-text: #000000;
+  --color-title: #ffffff;
+  --gradient-1: var(--pale-violet);
+  --gradient-2: var(--baby-blue-eyes);
+  /* --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-heading: var(--vt-c-text-light-1);
+  --section-gap: 160px; */
+}
+
+/* aura variables */
+:root {
+  --circle-size: 100%;
+  --blending: lighten;
+  --bg-color-1: var(--pale-violet);
+  --bg-color-2: var(--baby-blue-eyes);
+  --red-test: 206, 29, 58;
+  --blue-test: 0, 102, 255;
+  --color-1: 153, 153, 255; /* maximum-blue-purple */
+  --color-2: 153, 204, 204; /* middle-blue-green: */
+  --color-3: 224, 195, 252; /* pale-lavender */
+  --color-4: 177, 202, 249; /* pale-cornflower-blue */
+  --cursor-color: 153, 153, 255;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+} */
+
+@font-face {
+  font-family: TTFirsRegular;
+  src: url('../assets/fonts/tt-firs-neue/TT-Firs-Neue-Regular.ttf');
+}
+
+@font-face {
+  font-family: Athachantr;
+  src: url('../assets/fonts/athachantr/Athachantrt-Regular.otf');
+}
+@font-face {
+  font-family: BodyRegular;
+  src: url('../assets/fonts/body-text-fit/Body-Text-Fit-Regular.ttf');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  color: var(--color-text);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: BodyRegular, Inter, Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h3 {
+  font-family: TTFirsRegular;
+}
+
+h1 {
+  font-size: 65px;
+}
+
+h2 {
+  font-family: Athachantr;
+  font-size: 30px;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 46px;
+}
+
+h4 {
+  font-family: BodyRegular;
+  font-size: 15px;
+}
