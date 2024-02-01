@@ -34,26 +34,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- Filter Effects -->
-  <svg xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="filterEffects">
-        <!-- Blur filter -->
-        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-        <!-- Changes colors based on a transformation matrix -->
-        <feColorMatrix
-          in="blur"
-          mode="matrix"
-          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-          result="filterEffects"
-        />
-        <!-- Blend together using blend modes -->
-        <feBlend in="SourceGraphic" in2="filterEffects" />
-      </filter>
-    </defs>
-  </svg>
-
-  <!-- Content -->
   <div id="gradient-background">
     <div class="aura-container">
       <div class="aura aura-1"></div>
@@ -63,6 +43,25 @@ onMounted(() => {
       <div class="cursor-aura" ref="cursorAura"></div>
     </div>
   </div>
+
+  <!-- Filter Effects -->
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="auraBgFilter">
+        <!-- Blur filter -->
+        <feGaussianBlur in="SourceGraphic" stdDeviation="125" result="blur" />
+        <!-- Changes colors based on a transformation matrix -->
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+          result="color"
+        />
+        <!-- Blend together using blend modes -->
+        <feBlend in="blur" in2="color" />
+      </filter>
+    </defs>
+  </svg>
 </template>
 
 <style scoped>
@@ -75,12 +74,19 @@ svg {
   height: 100%;
   position: absolute;
   top: 0;
-  background: linear-gradient(140deg, var(--bg-color-1), var(--bg-color-2));
+  /* background: linear-gradient(140deg, rgba(var(--gradient-4), 1), rgba(var(--gradient-3), 1)); */
+  background-image: linear-gradient(
+    100deg,
+    var(--gradient-3) 0%,
+    var(--gradient-4) 60%,
+    var(--gradient-5) 80%,
+    var(--gradient-6) 100%
+  );
   overflow: hidden;
 }
 
 .aura-container {
-  filter: url(#filterEffects) blur(25px);
+  filter: url(#auraBgFilter);
   width: 100%;
   height: 100%;
 }
@@ -97,8 +103,8 @@ svg {
 .aura-1 {
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-1), 1) 0,
-    rgba(var(--color-1), 0) 50%
+    rgba(var(--rgb-maximum-blue-purple), 1) 0,
+    rgba(var(--rgb-maximum-blue-purple), 0) 50%
   );
   top: calc(50% - var(--moving-circle-size) / 2);
   left: calc(50% - var(--moving-circle-size) / 2);
@@ -109,8 +115,8 @@ svg {
 .aura-2 {
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-2), 1) 0,
-    rgba(var(--color-2), 0) 50%
+    rgba(var(--rgb-middle-blue-green), 1) 0,
+    rgba(var(--rgb-middle-blue-green), 0) 50%
   );
   top: calc(50% - var(--moving-circle-size) / 2);
   left: calc(50% - var(--moving-circle-size) / 2);
@@ -120,8 +126,8 @@ svg {
 .aura-3 {
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-3), 1) 0,
-    rgba(var(--color-3), 0) 50%
+    rgba(var(--rgb-pale-lavender), 1) 0,
+    rgba(var(--rgb-pale-lavender), 0) 50%
   );
   top: calc(50% - var(--moving-circle-size) / 2 - 200px);
   left: calc(50% - var(--moving-circle-size) / 2 + 300px);
@@ -131,8 +137,8 @@ svg {
 .aura-4 {
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-4), 1) 0,
-    rgba(var(--color-4), 0) 50%
+    rgba(var(--rgb-pale-cornflower-blue), 1) 0,
+    rgba(var(--rgb-pale-cornflower-blue), 0) 50%
   );
   top: calc(50% - var(--moving-circle-size) / 2 - 200px);
   left: calc(50% - var(--moving-circle-size) / 2 - 400px);
@@ -143,15 +149,15 @@ svg {
 .cursor-aura {
   background: radial-gradient(
     circle at center,
-    rgba(var(--cursor-color), 0.8) 0,
-    rgba(var(--cursor-color), 0) 50%
+    rgba(var(--cursor-color), 1) 0,
+    rgba(var(--cursor-color), 0) 20%
   );
   position: absolute;
   width: 100%;
   height: 100%;
   top: -50%;
   left: -50%;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 @keyframes moveInCircle {
@@ -163,30 +169,6 @@ svg {
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes moveVertical {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-@keyframes moveHorizontal {
-  0% {
-    transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    transform: translateX(50%) translateY(10%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-10%);
   }
 }
 </style>

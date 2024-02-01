@@ -4,11 +4,11 @@ import AuraBackground from '../components/AuraBackground.vue'
 
 <template>
   <section id="home">
-    <div class="introduction">
+    <div id="introduction">
       <h1>Lana Gordon</h1>
       <h2>Full<span>-</span>Stack Developer</h2>
     </div>
-    <div class="background"><AuraBackground /></div>
+    <div id="background"><AuraBackground /></div>
   </section>
 </template>
 
@@ -25,7 +25,7 @@ div {
   height: 100%;
 }
 
-.introduction {
+#introduction {
   z-index: 2;
   display: flex;
   flex-flow: column nowrap;
@@ -48,7 +48,7 @@ span {
   font-family: TTFirsRegular;
 }
 
-.background {
+#background {
   z-index: 1;
 }
 

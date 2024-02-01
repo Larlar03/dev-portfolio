@@ -1,16 +1,21 @@
 <script setup lang="ts">
-defineProps<{
-  title?: string
-}>()
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'Lorem Ipsum'
+  },
+  subtitle: String
+})
 </script>
 
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h4>{{ props.subtitle }}</h4>
+    <h3>{{ props.title }}</h3>
   </header>
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
 }
 </style>

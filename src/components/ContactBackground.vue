@@ -46,8 +46,8 @@ svg {
   right: calc(35% - var(--static-circle-size) / 2);
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-2), 1) 50%,
-    rgba(var(--color-1), 1) 100%
+    rgba(var(--rgb-middle-blue-green), 1) 50%,
+    rgba(var(--rgb-maximum-blue-purple), 1) 100%
   );
   opacity: 1;
 }
@@ -57,8 +57,8 @@ svg {
   right: calc(30% - var(--static-circle-size) / 2);
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-5), 1) 5%,
-    rgba(var(--color-1), 1) 100%
+    rgba(var(--rgb-pale-magenta), 1) 5%,
+    rgba(var(--rgb-maximum-blue-purple), 1) 100%
   );
   opacity: 0.8;
 }

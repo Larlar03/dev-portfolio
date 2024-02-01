@@ -1,25 +1,25 @@
 <script setup lang="ts"></script>
 
 <template>
-  <!-- Filter -->
-  <svg xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="noiseFilter">
-        <!-- Blur -->
-        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
-        <!-- Noise -->
-        <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" result="turbulence" />
-        <!-- Blend In -->
-        <feComposite in="blur" in2="turbulence" operator="in" />
-      </filter>
-    </defs>
-  </svg>
-
   <!-- Content -->
   <div class="aura-container">
     <div class="aura aura-1"></div>
     <div class="aura aura-2"></div>
   </div>
+
+  <!-- Filter -->
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="bgNoiseFilter">
+        <!-- Blur -->
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+        <!-- Noise -->
+        <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" result="turbulence" />
+        <!-- Blend -->
+        <feComposite in="blur" in2="turbulence" operator="in" />
+      </filter>
+    </defs>
+  </svg>
 </template>
 
 <style scoped>
@@ -28,7 +28,7 @@ svg {
 }
 
 .aura-container {
-  filter: url(#noiseFilter);
+  filter: url(#bgNoiseFilter);
   width: 100%;
   height: 100%;
 }
@@ -46,8 +46,8 @@ svg {
   right: calc(35% - var(--static-circle-size) / 2);
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-2), 1) 50%,
-    rgba(var(--color-1), 1) 100%
+    rgba(var(--rgb-middle-blue-green), 1) 50%,
+    rgba(var(--rgb-maximum-blue-purple), 1) 100%
   );
   opacity: 1;
 }
@@ -57,8 +57,8 @@ svg {
   right: calc(30% - var(--static-circle-size) / 2);
   background: radial-gradient(
     circle at center,
-    rgba(var(--color-5), 1) 5%,
-    rgba(var(--color-1), 1) 100%
+    rgba(var(--rgb-pale-magenta), 1) 5%,
+    rgba(var(--rgb-maximum-blue-purple), 1) 100%
   );
   opacity: 0.8;
 }

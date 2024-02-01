@@ -13,36 +13,34 @@
 :root {
   --color-text: #000000;
   --color-title: #ffffff;
-  --gradient-1: var(--pale-violet);
-  --gradient-2: var(--baby-blue-eyes);
-  /* --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-  --color-heading: var(--vt-c-text-light-1);
-  --section-gap: 160px; */
+  --gradient-1: #ba9ecb;
+  --gradient-2: #b59ed0;
+  --gradient-3: #bdaee6;
+  --gradient-4: #b2b6ed;
+  --gradient-5: #b7c9fa;
+  --gradient-6: #b3cdfa;
 }
 
 /* aura variables */
 :root {
+  --circle-size: 1000px;
   --moving-circle-size: 100%;
   --static-circle-size: 500px;
   --blending: lighten;
-  --bg-color-1: var(--pale-violet);
-  --bg-color-2: var(--baby-blue-eyes);
   --red-test: 206, 29, 58;
   --blue-test: 0, 102, 255;
-  --color-1: 153, 153, 255; /* maximum-blue-purple */
-  --color-2: 153, 204, 204; /* middle-blue-green: */
-  --color-3: 224, 195, 252; /* pale-lavender */
-  --color-4: 177, 202, 249; /* pale-cornflower-blue */
-  --color-5: 254, 124, 233; /* pale-magenta */
-  --cursor-color: 153, 153, 255;
+  --rgb-maximum-blue-purple: 153, 153, 255; /* maximum-blue-purple */
+  --rgb-middle-blue-green: 153, 204, 204; /* middle-blue-green: */
+  --rgb-pale-lavender: 224, 195, 252; /* pale-lavender */
+  --rgb-pale-cornflower-blue: 177, 202, 249; /* pale-cornflower-blue */
+  --rgb-pale-magenta: 254, 124, 233; /* pale-magenta */
+  --rgb-shampoo-pink: 255, 204, 255; /* shampoo pink */
+  --rgb-blue-bell-purple: 165, 151, 206; /* blue bell purple */
+  --cursor-color: var(--rgb-maximum-blue-purple);
 }
 
 :root {
-  --section-height: 668px;
+  --section-height: 768px;
 }
 
 /* @media (prefers-color-scheme: dark) {

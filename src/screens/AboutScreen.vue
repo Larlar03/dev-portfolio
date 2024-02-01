@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import Header from '../components/SectionHeader.vue'
-import AboutBackground from '../components/AboutBackground.vue'
+import NoiseBackground from '../components/NoiseBackground.vue'
 </script>
 
 <template>
   <section id="about">
-    <div class="container content">
-      <div class="header">
+    <div id="about__content" class="container">
+      <div id="about__content--header">
         <Header title="About / Skills" />
       </div>
-      <div class="column left">
+      <div id="about__content--left" class="column">
         <h4>About</h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -17,7 +17,7 @@ import AboutBackground from '../components/AboutBackground.vue'
           pretium.
         </p>
       </div>
-      <div class="column middle">
+      <div id="about__content--middle" class="column">
         <h4>Heading</h4>
         <ul>
           <li>One</li>
@@ -27,7 +27,7 @@ import AboutBackground from '../components/AboutBackground.vue'
           <li>Five</li>
         </ul>
       </div>
-      <div class="column right">
+      <div id="about__content--right" class="column">
         <h4>Heading</h4>
         <ul>
           <li>One</li>
@@ -38,14 +38,23 @@ import AboutBackground from '../components/AboutBackground.vue'
         </ul>
       </div>
     </div>
-
-    <div class="container background"><AboutBackground /></div>
+    <div id="about__background" class="container"><NoiseBackground /></div>
   </section>
 </template>
 
 <style scoped>
 #about {
   position: relative;
+}
+
+#about__content {
+  z-index: 2;
+  width: 100%;
+  height: auto;
+}
+
+#about__background {
+  z-index: 1;
 }
 
 .container {
@@ -56,19 +65,8 @@ import AboutBackground from '../components/AboutBackground.vue'
   height: 100%;
 }
 
-.content {
-  z-index: 2;
-  width: 100%;
-  height: auto;
-  padding: 30px;
-}
-
-.background {
-  z-index: 1;
-}
-
-div {
-  margin-bottom: 36px;
+.column {
+  margin-top: 36px;
 }
 
 h4 {
@@ -91,28 +89,26 @@ li {
 }
 
 @media (min-width: 768px) {
-  .content {
+  #about__content {
     width: 100%;
     height: var(--section-height);
-    padding: 60px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr min-content;
     grid-column-gap: 100px;
   }
 
-  .header {
+  #about__content--header {
     grid-column: 1 / span 4;
     width: 33.3%;
   }
 
-  .left {
+  #about__content--left {
     grid-column: 1 / span 2;
-
   }
 
-  div {
-    margin-bottom: 0;
+  .column {
+    margin-top: 0;
   }
 
   h4 {
