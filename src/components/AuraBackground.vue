@@ -96,7 +96,7 @@ svg {
   width: var(--moving-circle-size);
   height: var(--moving-circle-size);
   background-repeat: no-repeat;
-  mix-blend-mode: var(--blending);
+  mix-blend-mode: lighten;
   opacity: 1;
 }
 

@@ -26,7 +26,6 @@
   --circle-size: 1000px;
   --moving-circle-size: 100%;
   --static-circle-size: 500px;
-  --blending: lighten;
   --red-test: 206, 29, 58;
   --blue-test: 0, 102, 255;
   --rgb-maximum-blue-purple: 153, 153, 255; /* maximum-blue-purple */
