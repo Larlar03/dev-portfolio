@@ -66,48 +66,48 @@ import GradientBackground from '@/components/GradientBackground.vue'
 }
 
 #portfolio__content--projects {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
 }
 
 .projects__row {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 30px;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 40px;
 }
 
 .projects__row--card {
-  flex-basis: 100%; /* Initial size */
-  flex-grow: 1; /* Allow item to grow */
-  flex-shrink: 0; /* Prevent item from shrinking */
-  height: 300px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
 }
 
 .card__image {
-  width: 100%;
-  height: 85%;
+  flex: 1;
+  background-color: #f1f0ff;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
-  margin-bottom: 10px;
-  background-color: #f1f0ff;
 }
-
 .card__heading {
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   #portfolio {
     height: var(--section-height);
   }
 
   #portfolio__content {
     grid-template-columns: min-content 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
     column-gap: 80px;
+  }
+
+  #portfolio__content--projects {
+    align-items: center;
   }
 
   .projects__row {
