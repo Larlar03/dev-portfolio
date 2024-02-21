@@ -69,6 +69,7 @@ import GradientBackground from '@/components/GradientBackground.vue'
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
+  margin-top: 36px;
 }
 
 .projects__row {
@@ -95,6 +96,21 @@ import GradientBackground from '@/components/GradientBackground.vue'
   font-weight: bold;
 }
 
+@media (min-width: 768px) {
+  .projects__row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0;
+    column-gap: 30px;
+    width: 100%;
+  }
+
+  .projects__row--card {
+    flex-basis: 30%; /* Shrink to 30% on larger screens */
+    height: 250px;
+  }
+}
+
 @media (min-width: 1024px) {
   #portfolio {
     height: var(--section-height);
@@ -108,6 +124,7 @@ import GradientBackground from '@/components/GradientBackground.vue'
 
   #portfolio__content--projects {
     align-items: center;
+    margin-top: 0px;
   }
 
   .projects__row {
