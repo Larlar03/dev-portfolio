@@ -12,7 +12,7 @@
     <defs>
       <filter id="bgNoiseFilter">
         <!-- Blur -->
-        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+        <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blur" />
         <!-- Noise -->
         <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" result="turbulence" />
         <!-- Blend -->

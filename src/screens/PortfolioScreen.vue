@@ -48,7 +48,7 @@ import GradientBackground from '@/components/GradientBackground.vue'
 <style scoped>
 #portfolio {
   position: relative;
-  height: calc(var(--section-height) * 2);
+  height: 100%;
 }
 
 #portfolio__background {
@@ -58,7 +58,7 @@ import GradientBackground from '@/components/GradientBackground.vue'
 #portfolio__content {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr;
@@ -75,7 +75,6 @@ import GradientBackground from '@/components/GradientBackground.vue'
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  row-gap: 40px;
 }
 
 .projects__row--card {
@@ -83,6 +82,7 @@ import GradientBackground from '@/components/GradientBackground.vue'
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  margin-bottom: 25px;
 }
 
 .card__image {

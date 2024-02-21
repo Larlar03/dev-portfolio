@@ -75,7 +75,6 @@ h4 {
 
 p {
   font-weight: bold;
-  font-family: BodyRegular;
   text-transform: uppercase;
 }
 
